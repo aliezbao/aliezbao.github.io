@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background: #fbfbfd;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+/* 导航栏 */
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #1d1d1f;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* 主页英雄区 */
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+}
+
+.hero h2 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 21px;
+    color: #6e6e73;
+}
+
+/* 文章网格 */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 40px 0 80px;
+}
+
+.post-card {
+    background: white;
+    border-radius: 18px;
+    padding: 32px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.post-card .post-meta {
+    font-size: 14px;
+    color: #6e6e73;
+    margin-bottom: 16px;
+}
+
+.post-card .post-excerpt {
+    font-size: 16px;
+    color: #1d1d1f;
+    line-height: 1.5;
+}
+
+/* 文章详情 */
+.post-detail {
+    background: white;
+    border-radius: 18px;
+    padding: 60px;
+    margin: 40px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.post-detail h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.post-detail .post-meta {
+    font-size: 14px;
+    color: #6e6e73;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #d2d2d7;
+}
+
+.post-detail h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 40px 0 16px;
+}
+
+.post-detail h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+}
+
+.post-detail p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.post-detail code {
+    background: #f5f5f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 15px;
+}
+
+.post-detail pre {
+    background: #1d1d1f;
+    color: #f5f5f7;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.post-detail pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.post-detail ul, .post-detail ol {
+    margin: 20px 0 20px 24px;
+}
+
+.post-detail li {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 17px;
+    margin-bottom: 60px;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.6;
+}
+
+/* 页脚 */
+footer {
+    background: #f5f5f7;
+    padding: 40px 0;
+    text-align: center;
+    color: #6e6e73;
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 40px;
+    }
+    
+    .hero p {
+        font-size: 19px;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-detail {
+        padding: 32px 24px;
+    }
+    
+    .post-detail h1 {
+        font-size: 36px;
+    }
+}

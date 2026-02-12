@@ -1,0 +1,16 @@
+[
+    {
+        "id": "hello-world",
+        "title": "Hello World",
+        "date": "2026-02-12",
+        "file": "hello-world.md",
+        "excerpt": "欢迎来到我的博客！这是第一篇文章。"
+    },
+    {
+        "id": "markdown-guide",
+        "title": "Markdown 使用指南",
+        "date": "2026-02-11",
+        "file": "markdown-guide.md",
+        "excerpt": "学习如何使用 Markdown 编写博客文章。"
+    }
+]
