@@ -4,7 +4,7 @@
 
 ## 关于这个博客
 
-这是一个使用纯 HTML、CSS 和 JavaScript 构建的静态博客网站，采用了苹果公司的设计风格。
+这是一个使用纯 HTML、CSS 和 JavaScript 构建的静态博客网站，采用了简洁的设计风格，使用了kiro vibe coding 进行创建。
 
 ### 特点
 

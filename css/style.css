@@ -125,6 +125,16 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
 }
 
+.post-detail a {
+    color: #0071e3;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.post-detail a:hover {
+    opacity: 0.6;
+}
+
 .post-detail h1 {
     font-size: 48px;
     font-weight: 600;
