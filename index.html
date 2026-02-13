@@ -12,6 +12,7 @@
             <h1 class="logo">miniBlog</h1>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
+                <li><a href="archive.html">归档</a></li>
                 <li><a href="about.html">关于</a></li>
             </ul>
         </div>
@@ -23,10 +24,43 @@
             <p>分享技术、思考与生活</p>
         </section>
 
+        <!-- 搜索和筛选区域 -->
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜索文章..." />
+                <button id="clear-search" class="clear-btn" style="display: none;">✕</button>
+            </div>
+            
+            <div class="filter-controls">
+                <div class="tags-filter" id="tags-filter">
+                    <button class="tag-btn active" data-tag="all">全部</button>
+                </div>
+                
+                <select id="sort-select" class="sort-select">
+                    <option value="date-desc">最新发布</option>
+                    <option value="date-asc">最早发布</option>
+                    <option value="title-asc">标题 A-Z</option>
+                    <option value="title-desc">标题 Z-A</option>
+                </select>
+            </div>
+        </section>
+
         <section id="posts" class="posts-grid">
             <!-- 文章列表将通过 JavaScript 动态加载 -->
         </section>
+
+        <div id="no-results" class="no-results" style="display: none;">
+            <p>😔 没有找到相关文章</p>
+        </div>
     </main>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" style="display: none;">↑</button>
+
+    <!-- 主题切换按钮 -->
+    <button id="theme-toggle" class="theme-toggle" title="切换主题">
+        <span class="theme-icon">🌙</span>
+    </button>
 
     <footer>
         <div class="container">
@@ -35,6 +69,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

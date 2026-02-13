@@ -5,24 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文章详情</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 <body>
+    <!-- 阅读进度条 -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <h1 class="logo">Blog</h1>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
+                <li><a href="archive.html">归档</a></li>
                 <li><a href="about.html">关于</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container post-container">
+        <!-- 目录导航 -->
+        <aside class="toc" id="toc">
+            <div class="toc-header">目录</div>
+            <nav id="toc-nav"></nav>
+        </aside>
+
         <article id="post-content" class="post-detail">
             <!-- 文章内容将通过 JavaScript 动态加载 -->
         </article>
+        
+        <!-- 文章底部操作栏 -->
+        <div class="post-actions">
+            <button id="share-btn" class="action-btn share-btn">
+                <span>🔗</span>
+                <span>分享链接</span>
+            </button>
+            <button id="print-btn" class="action-btn print-btn">
+                <span>🖨️</span>
+                <span>打印文章</span>
+            </button>
+        </div>
+        
         <a href="index.html" class="back-link">← 返回首页</a>
     </main>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" style="display: none;">↑</button>
+
+    <!-- 主题切换按钮 -->
+    <button id="theme-toggle" class="theme-toggle" title="切换主题">
+        <span class="theme-icon">🌙</span>
+    </button>
 
     <footer>
         <div class="container">
@@ -31,6 +65,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/post.js"></script>
 </body>
 </html>
