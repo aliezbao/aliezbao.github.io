@@ -204,19 +204,29 @@ function lazyLoadImages() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.style.opacity = '0';
-                    img.style.transition = 'opacity 0.3s';
                     
-                    img.onload = () => {
+                    // 如果图片还没加载完成
+                    if (!img.complete) {
+                        img.style.opacity = '0';
+                        img.style.transition = 'opacity 0.3s';
+                        
+                        img.onload = () => {
+                            img.style.opacity = '1';
+                        };
+                    } else {
+                        // 图片已经加载完成，直接显示
                         img.style.opacity = '1';
-                    };
+                    }
                     
                     imageObserver.unobserve(img);
                 }
             });
         });
         
-        images.forEach(img => imageObserver.observe(img));
+        images.forEach(img => {
+            img.style.transition = 'opacity 0.3s';
+            imageObserver.observe(img);
+        });
     }
 }
 
