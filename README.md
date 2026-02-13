@@ -1,38 +1,79 @@
 # 静态博客网站
 
-一个简洁优雅的静态博客网站，采用苹果公司的设计风格，前后端分离架构。
+一个功能丰富、简洁优雅的静态博客网站，采用苹果公司的设计风格，使用 Kiro Vibe Coding 创建。
 
-## 特点
+## ✨ 特点
 
+### 核心功能
 - 🎨 苹果风格设计，简洁优雅
 - 📝 使用 Markdown 编写文章
 - 🚀 纯静态，易于部署
-- 📱 响应式设计，支持移动端
+- 📱 响应式设计，完美支持移动端
 - ⚡ 无需后端，加载快速
 
-## 文件结构
+### 功能增强
+- 🔍 实时搜索 - 支持标题、摘要、标签搜索
+- 🏷️ 动态标签系统 - 自动提取文章标签，支持筛选
+- 🌓 深色模式 - 一键切换明暗主题，自动保存偏好
+- 📊 阅读进度条 - 文章顶部实时显示阅读进度
+- 📑 目录导航 - 自动生成侧边目录，滚动高亮当前章节
+- 🔄 文章排序 - 支持按日期、标题排序
+
+### 用户体验
+- 💫 加载动画 - 优雅的加载提示
+- 🖼️ 图片懒加载 - 优化页面加载性能
+- 🎨 代码高亮 - 使用 Highlight.js 美化代码
+- 📋 一键复制代码 - 代码块自带复制按钮
+- ⬆️ 返回顶部 - 滚动时自动显示
+- ⌨️ 键盘导航 - 左右箭头切换文章，ESC 返回首页
+- 🔗 分享功能 - 一键复制文章链接
+- 🖨️ 打印优化 - 完美的打印样式
+
+### 内容展示
+- 📈 字数统计 - 自动计算文章字数
+- ⏱️ 阅读时间 - 智能预估阅读时长
+- 📅 归档页面 - 按年月归档所有文章
+- 🔖 标签展示 - 文章卡片显示标签
+
+## 📁 文件结构
 
 ```
 .
-├── index.html          # 首页
-├── post.html           # 文章详情页
+├── index.html              # 首页
+├── post.html               # 文章详情页
+├── about.html              # 关于页面
+├── archive.html            # 归档页面
 ├── css/
-│   └── style.css       # 样式文件
+│   └── style.css           # 样式文件（含深色模式）
 ├── js/
-│   ├── app.js          # 首页逻辑
-│   └── post.js         # 文章页逻辑
+│   ├── app.js              # 首页逻辑（搜索、筛选、排序）
+│   ├── post.js             # 文章页逻辑（目录、进度条、分享）
+│   ├── archive.js          # 归档页面逻辑
+│   ├── theme.js            # 主题切换
+│   └── scroll.js           # 滚动相关功能
 ├── posts/
-│   ├── index.json      # 文章索引
-│   ├── hello-world.md  # 示例文章
-│   └── markdown-guide.md
+│   ├── index.json          # 文章索引（含标签、阅读时间）
+│   ├── hello-world.md      # 示例文章
+│   ├── markdown-guide.md
+│   └── ...
 └── README.md
 ```
 
-## 使用方法
+## 🚀 快速开始
 
 ### 1. 添加新文章
 
-在 `posts` 目录下创建新的 Markdown 文件，例如 `my-post.md`。
+在 `posts` 目录下创建新的 Markdown 文件，例如 `my-post.md`：
+
+```markdown
+# 我的文章标题
+
+这是文章内容...
+
+## 章节标题
+
+更多内容...
+```
 
 ### 2. 更新文章索引
 
@@ -42,15 +83,26 @@
 {
     "id": "my-post",
     "title": "我的文章标题",
-    "date": "2026-02-12",
+    "date": "2026-02-14",
     "file": "my-post.md",
-    "excerpt": "文章摘要描述"
+    "excerpt": "文章摘要描述",
+    "tags": ["技术", "教程"],
+    "readTime": 5
 }
 ```
 
+**字段说明：**
+- `id`: 文章唯一标识（用于 URL）
+- `title`: 文章标题
+- `date`: 发布日期（YYYY-MM-DD）
+- `file`: Markdown 文件名
+- `excerpt`: 文章摘要
+- `tags`: 标签数组（可选，会自动生成标签筛选）
+- `readTime`: 预估阅读时间（分钟，可选，会自动计算）
+
 ### 3. 本地预览
 
-使用任何静态服务器预览网站，例如：
+使用任何静态服务器预览网站：
 
 ```bash
 # 使用 Python
@@ -61,11 +113,14 @@ npx serve
 
 # 使用 PHP
 php -S localhost:8000
+
+# 使用 Live Server (VS Code 插件)
+# 右键 index.html -> Open with Live Server
 ```
 
 然后访问 `http://localhost:8000`
 
-## 部署到 GitHub Pages
+## 🌐 部署到 GitHub Pages
 
 ### 方法一：通过仓库设置
 
@@ -98,49 +153,106 @@ jobs:
           publish_dir: ./
 ```
 
-## 自定义
+## 🎨 自定义
 
-### 修改网站标题和信息
+### 修改网站信息
 
-编辑 `index.html` 和 `post.html` 中的以下内容：
+编辑各 HTML 文件中的以下内容：
 
-- `<title>` 标签
-- 导航栏中的 logo
-- 页脚信息
+- `<title>` 标签 - 网站标题
+- `.logo` 类 - 导航栏 logo
+- `footer` 标签 - 页脚信息
 
-### 修改样式
+### 修改主题颜色
 
-编辑 `css/style.css` 来自定义颜色、字体等样式。
+编辑 `css/style.css` 中的 CSS 变量：
 
-### 添加功能
+```css
+:root {
+    --bg-primary: #fbfbfd;
+    --bg-secondary: #ffffff;
+    --text-primary: #1d1d1f;
+    --accent-color: #0071e3;  /* 主题色 */
+    /* ... */
+}
 
-可以在 `js/app.js` 和 `js/post.js` 中添加更多功能，例如：
+body.dark-theme {
+    --bg-primary: #000000;
+    --bg-secondary: #1d1d1f;
+    --text-primary: #f5f5f7;
+    --accent-color: #2997ff;  /* 深色模式主题色 */
+    /* ... */
+}
+```
 
-- 搜索功能
-- 标签分类
-- 评论系统（使用第三方服务）
-- 深色模式
+### 修改阅读速度
 
-## 技术栈
+编辑 `js/post.js` 中的阅读速度（默认每分钟 300 字）：
+
+```javascript
+const readTime = Math.ceil(wordCount / 300); // 修改 300 为你的阅读速度
+```
+
+## 📖 使用技巧
+
+### 搜索功能
+- 在首页搜索框输入关键词
+- 支持搜索标题、摘要和标签
+- 实时显示搜索结果
+
+### 标签筛选
+- 点击标签按钮筛选相关文章
+- 标签自动从文章中提取，无需手动配置
+- 点击"全部"显示所有文章
+
+### 键盘快捷键
+- `←` 左箭头：上一篇文章
+- `→` 右箭头：下一篇文章
+- `ESC`：返回首页
+
+### 深色模式
+- 点击右下角月亮/太阳图标切换
+- 自动保存偏好设置
+- 跨页面保持主题
+
+## 🛠️ 技术栈
 
 - HTML5
-- CSS3
+- CSS3（CSS Variables, Grid, Flexbox）
 - JavaScript (ES6+)
 - [Marked.js](https://marked.js.org/) - Markdown 解析器
+- [Highlight.js](https://highlightjs.org/) - 代码高亮
 
-## 浏览器支持
+## 🌍 浏览器支持
 
 支持所有现代浏览器：
 
-- Chrome
-- Firefox
-- Safari
-- Edge
+- Chrome / Edge (最新版)
+- Firefox (最新版)
+- Safari (最新版)
 
-## 许可证
+## 📝 Markdown 支持
+
+支持标准 Markdown 语法：
+
+- 标题（H1-H6）
+- 段落和换行
+- 粗体、斜体
+- 列表（有序、无序）
+- 链接和图片
+- 代码块（支持语法高亮）
+- 引用
+- 表格
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
 
 MIT License
 
-## 贡献
+## 🙏 致谢
 
-欢迎提交 Issue 和 Pull Request！
+- 设计灵感来自 Apple
+- 使用 Kiro Vibe Coding 创建
