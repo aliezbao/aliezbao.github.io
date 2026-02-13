@@ -5,8 +5,7 @@
         "date": "2026-02-13",
         "file": "drive-wojian.md",
         "excerpt": "分享个人的感受",
-        "tags": ["生活", "驾考"],
-        "readTime": 3
+        "tags": ["生活", "驾考"]
     },
     {
         "id": "hello-world",
@@ -14,8 +13,7 @@
         "date": "2026-02-12",
         "file": "hello-world.md",
         "excerpt": "欢迎来到我的博客！这是第一篇文章。",
-        "tags": ["随笔"],
-        "readTime": 2
+        "tags": ["随笔"]
     },
     {
         "id": "markdown-guide",
@@ -23,8 +21,7 @@
         "date": "2026-02-11",
         "file": "markdown-guide.md",
         "excerpt": "学习如何使用 Markdown 编写博客文章。",
-        "tags": ["技术", "教程"],
-        "readTime": 5
+        "tags": ["技术", "教程"]
     },
     {
         "id": "driving-test-subject1",
@@ -32,7 +29,6 @@
         "date": "2026-02-12",
         "file": "driving-test-subject1.md",
         "excerpt": "驾驶考试C1科目一的重点知识整理，包括法规、扣分标准等内容。",
-        "tags": ["生活", "驾考", "学习"],
-        "readTime": 8
+        "tags": ["生活", "驾考", "学习"]
     }
 ]
