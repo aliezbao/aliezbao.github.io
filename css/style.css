@@ -42,10 +42,13 @@ body {
     background: var(--bg-primary);
     transition: background 0.3s, color 0.3s;
     scroll-behavior: smooth;
+    direction: ltr;
+    text-align: left;
 }
 
 html {
     scroll-behavior: smooth;
+    direction: ltr;
 }
 
 .container {
@@ -374,12 +377,11 @@ body.dark-theme .navbar {
     font-size: 17px;
     line-height: 1.7;
     margin-bottom: 20px;
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
 }
 
 .post-detail .post-body {
-    writing-mode: horizontal-tb;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .post-detail code {
@@ -495,7 +497,12 @@ body.dark-theme .navbar {
     font-size: 17px;
     margin-bottom: 60px;
     transition: opacity 0.3s;
-    grid-column: 2;
+}
+
+@media (min-width: 769px) {
+    .back-link {
+        grid-column: 2;
+    }
 }
 
 .back-link:hover {
@@ -590,10 +597,27 @@ footer {
     
     .post-detail h1 {
         font-size: 36px;
+        word-break: break-word;
     }
     
-    .back-link {
-        grid-column: 1;
+    .post-detail h2 {
+        font-size: 28px;
+        word-break: break-word;
+    }
+    
+    .post-detail h3 {
+        font-size: 22px;
+        word-break: break-word;
+    }
+    
+    .post-detail p {
+        font-size: 16px;
+        word-break: break-word;
+    }
+    
+    .post-detail .post-body {
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
     
     .filter-controls {
@@ -610,14 +634,16 @@ footer {
         right: 20px;
     }
     
-    .post-actions {
-        flex-direction: column;
-        grid-column: 1;
-    }
-    
     .action-btn {
         width: 100%;
         justify-content: center;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .post-actions {
+        flex-direction: column;
+        margin: 24px 0;
     }
     
     .archive-link {
@@ -794,7 +820,12 @@ footer {
     display: flex;
     gap: 16px;
     margin: 32px 0;
-    grid-column: 2;
+}
+
+@media (min-width: 769px) {
+    .post-actions {
+        grid-column: 2;
+    }
 }
 
 .action-btn {
